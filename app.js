@@ -162,7 +162,8 @@ async function populateSeasons() {
  */
 async function displayRaces(season) {
     const url = `https://www.randyconnolly.com/funwebdev/3rd/api/f1/races.php?season=${season}`;
-    const response = await fetchData(url, "races_to_display");
+    const response = await fetchData(url, `races_to_display_${season}`);
+    console.log(season)
     console.log(response);
     localStorage.setItem("season", season);
 
