@@ -128,17 +128,16 @@ async function fetchData(url, storageKey) {
  * }
  */
 async function populateSeasons() {
-    showView(homeView);
-    const url = 'https://www.randyconnolly.com/funwebdev/3rd/api/f1/races.php'; // Update API endpoint
-    const data = await fetchData(url, 'raceList');
-    const uniqueYears = [...new Set(data.map(race => race.year))];
-    uniqueYears.forEach(uniqueYear => {
+    showView(homeView); // Ensure this function shows the view as intended
+    const years = [2020, 2021, 2022, 2023]; // Define the range of years
+    years.forEach(year => {
         const option = document.createElement('option');
-        option.value = uniqueYear;
-        option.textContent = uniqueYear;
+        option.value = year;
+        option.textContent = year;
         seasonSelect.appendChild(option);
     });
 }
+
 /**
  * Displays the list of races for a given Formula 1 season.
  * 
