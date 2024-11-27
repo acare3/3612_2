@@ -220,12 +220,13 @@ async function displayRaces(season) {
 // Display race details
 async function displayRaceDetails(race) {
     // API URLs
-    const resultsUrl = `https://www.randyconnolly.com/funwebdev/3rd/api/f1/results.php?race=${race.round}&season=${localStorage.getItem("season")}`;
-    const qualifyingUrl = `https://www.randyconnolly.com/funwebdev/3rd/api/f1/qualifying.php?race=${race.round}&season=${localStorage.getItem("season")}`;
+    const resultsUrl = `https://www.randyconnolly.com/funwebdev/3rd/api/f1/results.php?race=${race.round}&season=${race.year}`;
+    const qualifyingUrl = `https://www.randyconnolly.com/funwebdev/3rd/api/f1/qualifying.php?race=${race.round}&season=${race.year}`;
 
     // Fetch results and qualifying data
-    const results = await fetchData(resultsUrl, `results_${race.round}_${localStorage.getItem("season")}`);
-    const qualifying = await fetchData(qualifyingUrl, `qualifying_${race.round}_${localStorage.getItem("season")}`);
+    const results = await fetchData(resultsUrl, `results_${race.round}_${race.year}`);
+    const qualifying = await fetchData(qualifyingUrl, `qualifying_${race.round}_${race.year}`);
+
     console.log("Results:");
     console.log(results);
     // hide selection message
