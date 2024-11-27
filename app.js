@@ -222,12 +222,12 @@ async function displayRaces(season) {
 async function displayRaceDetails(race) {
     // API URLs
     console.log(race);
-    const resultsUrl = `https://www.randyconnolly.com/funwebdev/3rd/api/f1/results.php?race=${race.round}&season=${race.year}`;
-    const qualifyingUrl = `https://www.randyconnolly.com/funwebdev/3rd/api/f1/qualifying.php?race=${race.round}&season=${race.year}`;
+    const resultsUrl = `https://www.randyconnolly.com/funwebdev/3rd/api/f1/results.php?race=${race.id}&season=${race.year}`;
+    const qualifyingUrl = `https://www.randyconnolly.com/funwebdev/3rd/api/f1/qualifying.php?race=${race.id}&season=${race.year}`;
 
     // Fetch results and qualifying data
-    const results = await fetchData(resultsUrl, `results_${race.round}_${race.year}`);
-    const qualifying = await fetchData(qualifyingUrl, `qualifying_${race.round}_${race.year}`);
+    const results = await fetchData(resultsUrl, `results_${race.id}_${race.year}`);
+    const qualifying = await fetchData(qualifyingUrl, `qualifying_${race.id}_${race.year}`);
 
     console.log("Results:");
     console.log(results);
