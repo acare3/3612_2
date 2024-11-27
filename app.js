@@ -226,7 +226,8 @@ async function displayRaceDetails(race) {
     // Fetch results and qualifying data
     const results = await fetchData(resultsUrl, `results_${race.round}_${localStorage.getItem("season")}`);
     const qualifying = await fetchData(qualifyingUrl, `qualifying_${race.round}_${localStorage.getItem("season")}`);
-
+    console.log("Results:");
+    console.log(results);
     // hide selection message
     document.querySelector("#no-race").classList.add("hidden");
 
