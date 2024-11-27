@@ -220,6 +220,7 @@ async function displayRaces(season) {
 // Display race details
 async function displayRaceDetails(race) {
     // API URLs
+    console.log(race);
     const resultsUrl = `https://www.randyconnolly.com/funwebdev/3rd/api/f1/results.php?race=${race.round}&season=${race.year}`;
     const qualifyingUrl = `https://www.randyconnolly.com/funwebdev/3rd/api/f1/qualifying.php?race=${race.round}&season=${race.year}`;
 
