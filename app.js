@@ -173,6 +173,7 @@ async function displayRaces(season) {
     response.forEach(race => {
         const li = document.createElement('li');
         li.className = "flex justify-between items-center py-2 border-b border-gray-300";
+        race.year = season;
 
         li.innerHTML = `${race.round}. ${race.name}<br>(${race.date})`;
         const button = buttonTemplate.content.firstElementChild.cloneNode(true);
